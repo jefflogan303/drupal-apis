@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for example module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function example_theme($existing, $type, $theme, $path) {
+  return [
+    'telephone_display' => [
+      'variables' => ['telephone_number' => '', 'node_title' => ''],
+    ],
+  ];
+}

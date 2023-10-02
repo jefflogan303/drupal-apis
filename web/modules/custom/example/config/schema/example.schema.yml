@@ -1,0 +1,7 @@
+block.settings.example_phone_block:
+  type: block_settings
+  label: 'Phone block'
+  mapping:
+    phone_number:
+      type: label
+      label: 'Phone number'

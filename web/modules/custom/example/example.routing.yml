@@ -1,0 +1,15 @@
+example.add:
+  path: '/admin/example'
+  defaults:
+    _title: 'Example Add Form'
+    _form: 'Drupal\example\Form\ExampleAddForm'
+  requirements:
+    _permission: 'administer example form'
+
+example.delete:
+  path: '/admin/example-delete'
+  defaults:
+    _title: 'Example Delete'
+    _form: 'Drupal\example\Form\ExampleDeleteForm'
+  requirements:
+    _permission: 'administer example form'

@@ -1,0 +1,8 @@
+example.add:
+  title: "Add"
+  route_name: example.add
+  base_route: example.add
+example.delete:
+  title: "Delete"
+  route_name: example.delete
+  base_route: example.add

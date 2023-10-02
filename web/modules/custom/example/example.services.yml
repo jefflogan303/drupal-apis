@@ -1,0 +1,4 @@
+services:
+  example.db:
+    class: Drupal\example\Db
+    arguments: ['@database']

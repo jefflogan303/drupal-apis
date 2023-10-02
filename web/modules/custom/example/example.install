@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the example module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function example_schema() {
+  $schema['example'] = [
+    'description' => 'The base table for example module.',
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier for a example module.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'description' => 'The name of the example.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'name' => ['name'],
+    ],
+  ];
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function example_install() {
+
+  $values = [
+    ['name' => 'Example 1'],
+    ['name' => 'Example 2'],
+    ['name' => 'Example 3'],
+  ];
+
+  $database = \Drupal::database();
+  $query = $database->insert('example')
+    ->fields([
+      'name',
+    ]);
+  foreach ($values as $value) {
+    $query->values($value);
+  }
+  $query->execute();
+}

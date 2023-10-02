@@ -1,0 +1,13 @@
+example.add:
+  title: Example Add
+  description: Add new content.
+  menu_name: admin
+  route_name: example.add
+  parent: system.admin_config_services
+  weight: 10
+example.delete:
+  title: Example Delete
+  menu_name: admin
+  parent: example.add
+  route_name: example.delete
+  weight: 20
